@@ -1,0 +1,14 @@
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\bin\Debug\Projet-cinema.exe.config
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\bin\Debug\Projet-cinema.exe
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\bin\Debug\Projet-cinema.pdb
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet-cinema.csprojAssemblyReference.cache
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.frmAccueil.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.frmBillets.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.frmFilms.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.frmProjections.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.Properties.Resources.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet_cinema.frmRecette.resources
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet-cinema.csproj.GenerateResource.cache
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet-cinema.csproj.CoreCompileInputs.cache
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet-cinema.exe
+P:\3 Trimestre\Projet dev\Projet-cinema\Projet-cinema\obj\Debug\Projet-cinema.pdb

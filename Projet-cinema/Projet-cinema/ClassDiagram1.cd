@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Projet_cinema.Acteur">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACAAIAAAACAAAAAAAAA=</HashCode>
+      <FileName>Acteur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Billet">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgBAAAIAQAAAEg=</HashCode>
+      <FileName>Billet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Cinema" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAQAAAIACEACAAAABAAAABAAAAAAA=</HashCode>
+      <FileName>Cinema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Film">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgAgAABgAAAAIAAAIAAAACAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Film.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.frmAccueil">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEACgAAACAIAAAAQAAEAAAAAAAAA=</HashCode>
+      <FileName>Accueil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Personne">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Personne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Program" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Projection" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAABgAAAEIAAABAAAACAAAAAhAAAAAQAAAIA=</HashCode>
+      <FileName>Projection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Rabais" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rabais.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Recette">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAgAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Recette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Salle" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAIAAAACAAAAAAAAEAAAABIAA=</HashCode>
+      <FileName>Salle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Tarif">
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>Tarif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_cinema.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

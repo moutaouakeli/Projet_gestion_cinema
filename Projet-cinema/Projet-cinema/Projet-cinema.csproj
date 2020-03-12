@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67936EB4-6A8E-4F0D-B15E-45F6FAD999BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projet_cinema</RootNamespace>
+    <AssemblyName>Projet-cinema</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acteur.cs" />
+    <Compile Include="Billet.cs" />
+    <Compile Include="frmBillets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillets.Designer.cs">
+      <DependentUpon>frmBillets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cinema.cs" />
+    <Compile Include="Film.cs" />
+    <Compile Include="frmAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccueil.Designer.cs">
+      <DependentUpon>frmAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilms.Designer.cs">
+      <DependentUpon>frmFilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personne.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Projection.cs" />
+    <Compile Include="frmProjections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProjections.Designer.cs">
+      <DependentUpon>frmProjections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rabais.cs" />
+    <Compile Include="Recette.cs" />
+    <Compile Include="frmRecette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecette.Designer.cs">
+      <DependentUpon>frmRecette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Salle.cs" />
+    <Compile Include="Tarif.cs" />
+    <EmbeddedResource Include="frmAccueil.resx">
+      <DependentUpon>frmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillets.resx">
+      <DependentUpon>frmBillets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFilms.resx">
+      <DependentUpon>frmFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProjections.resx">
+      <DependentUpon>frmProjections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmRecette.resx">
+      <DependentUpon>frmRecette.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
