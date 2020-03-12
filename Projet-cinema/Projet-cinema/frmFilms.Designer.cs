@@ -41,10 +41,6 @@
             this.txtRealisateur = new System.Windows.Forms.TextBox();
             this.txtNomFilm = new System.Windows.Forms.TextBox();
             this.btnChercherActeur = new System.Windows.Forms.Button();
-            this.NomFilm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Realisateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acteurs = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Description = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListeFilms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +49,7 @@
             this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(2, 354);
+            this.lblDescription.Location = new System.Drawing.Point(2, 357);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(114, 24);
             this.lblDescription.TabIndex = 3;
@@ -65,7 +61,7 @@
             this.lblNomRealisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNomRealisateur.AutoSize = true;
             this.lblNomRealisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomRealisateur.Location = new System.Drawing.Point(2, 159);
+            this.lblNomRealisateur.Location = new System.Drawing.Point(2, 162);
             this.lblNomRealisateur.Name = "lblNomRealisateur";
             this.lblNomRealisateur.Size = new System.Drawing.Size(113, 24);
             this.lblNomRealisateur.TabIndex = 1;
@@ -77,7 +73,7 @@
             this.lblActeurs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblActeurs.AutoSize = true;
             this.lblActeurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActeurs.Location = new System.Drawing.Point(2, 253);
+            this.lblActeurs.Location = new System.Drawing.Point(2, 256);
             this.lblActeurs.Name = "lblActeurs";
             this.lblActeurs.Size = new System.Drawing.Size(84, 24);
             this.lblActeurs.TabIndex = 2;
@@ -89,7 +85,7 @@
             this.lblNomFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNomFilm.AutoSize = true;
             this.lblNomFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomFilm.Location = new System.Drawing.Point(2, 75);
+            this.lblNomFilm.Location = new System.Drawing.Point(2, 78);
             this.lblNomFilm.Name = "lblNomFilm";
             this.lblNomFilm.Size = new System.Drawing.Size(121, 24);
             this.lblNomFilm.TabIndex = 0;
@@ -100,38 +96,39 @@
             // dgvListeFilms
             // 
             this.dgvListeFilms.AllowUserToOrderColumns = true;
+            this.dgvListeFilms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListeFilms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListeFilms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomFilm,
-            this.Realisateur,
-            this.Acteurs,
-            this.Description});
             this.dgvListeFilms.Location = new System.Drawing.Point(396, 77);
             this.dgvListeFilms.Name = "dgvListeFilms";
-            this.dgvListeFilms.Size = new System.Drawing.Size(707, 536);
+            this.dgvListeFilms.Size = new System.Drawing.Size(664, 536);
             this.dgvListeFilms.TabIndex = 12;
+            this.dgvListeFilms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListeFilms_CellClick);
+            this.dgvListeFilms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListeFilms_CellContentClick);
+            this.dgvListeFilms.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvListeFilms_MouseClick);
             // 
             // btnSupprimerFilm
             // 
             this.btnSupprimerFilm.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSupprimerFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimerFilm.Location = new System.Drawing.Point(928, 3);
+            this.btnSupprimerFilm.Location = new System.Drawing.Point(885, 3);
             this.btnSupprimerFilm.Name = "btnSupprimerFilm";
             this.btnSupprimerFilm.Size = new System.Drawing.Size(175, 59);
             this.btnSupprimerFilm.TabIndex = 11;
             this.btnSupprimerFilm.Text = "Supprimer";
             this.btnSupprimerFilm.UseVisualStyleBackColor = false;
+            this.btnSupprimerFilm.Click += new System.EventHandler(this.btnSupprimerFilm_Click);
             // 
             // btnModifierFilm
             // 
             this.btnModifierFilm.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnModifierFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifierFilm.Location = new System.Drawing.Point(675, 3);
+            this.btnModifierFilm.Location = new System.Drawing.Point(643, 3);
             this.btnModifierFilm.Name = "btnModifierFilm";
             this.btnModifierFilm.Size = new System.Drawing.Size(175, 59);
             this.btnModifierFilm.TabIndex = 10;
             this.btnModifierFilm.Text = "Modifier";
             this.btnModifierFilm.UseVisualStyleBackColor = false;
+            this.btnModifierFilm.Click += new System.EventHandler(this.btnModifierFilm_Click);
             // 
             // btnAjouterFilm
             // 
@@ -143,6 +140,7 @@
             this.btnAjouterFilm.TabIndex = 9;
             this.btnAjouterFilm.Text = "Ajouter";
             this.btnAjouterFilm.UseVisualStyleBackColor = false;
+            this.btnAjouterFilm.Click += new System.EventHandler(this.btnAjouterFilm_Click_1);
             // 
             // txtActeurs
             // 
@@ -185,36 +183,12 @@
             this.btnChercherActeur.UseVisualStyleBackColor = true;
             this.btnChercherActeur.Click += new System.EventHandler(this.button1_Click);
             // 
-            // NomFilm
-            // 
-            this.NomFilm.HeaderText = "Nom du film";
-            this.NomFilm.Name = "NomFilm";
-            this.NomFilm.Width = 170;
-            // 
-            // Realisateur
-            // 
-            this.Realisateur.HeaderText = "Réalisateur";
-            this.Realisateur.Name = "Realisateur";
-            this.Realisateur.Width = 170;
-            // 
-            // Acteurs
-            // 
-            this.Acteurs.HeaderText = "Acteurs";
-            this.Acteurs.Name = "Acteurs";
-            this.Acteurs.Width = 170;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 170;
-            // 
             // frmFilms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1105, 619);
+            this.ClientSize = new System.Drawing.Size(1073, 624);
             this.Controls.Add(this.btnChercherActeur);
             this.Controls.Add(this.txtActeurs);
             this.Controls.Add(this.txtDescription);
@@ -251,9 +225,5 @@
         private System.Windows.Forms.TextBox txtRealisateur;
         private System.Windows.Forms.TextBox txtNomFilm;
         private System.Windows.Forms.Button btnChercherActeur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomFilm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Realisateur;
-        private System.Windows.Forms.DataGridViewLinkColumn Acteurs;
-        private System.Windows.Forms.DataGridViewLinkColumn Description;
     }
 }

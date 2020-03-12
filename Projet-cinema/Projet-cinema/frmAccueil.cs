@@ -19,7 +19,26 @@ namespace Projet_cinema
 
         private void button1_Click(object sender, EventArgs e)
         {
+            frmBillets frmBillets = new frmBillets();
+            frmBillets.Show();
+        }
 
+        private void btnFilm_Click(object sender, EventArgs e)
+        {
+            frmFilms frmFilms = new frmFilms();
+            frmFilms.Show();
+        }
+
+        private void btnProjection_Click(object sender, EventArgs e)
+        {
+            frmProjections frmProjections = new frmProjections();
+            frmProjections.Show();
+        }
+
+        private void btnRecette_Click(object sender, EventArgs e)
+        {
+            frmRecette frmRecette = new frmRecette();
+            frmRecette.Show();
         }
     }
 }

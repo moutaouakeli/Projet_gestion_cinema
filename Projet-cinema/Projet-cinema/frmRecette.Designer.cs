@@ -92,7 +92,7 @@
             this.Controls.Add(this.btnImprimer);
             this.Controls.Add(this.lblDateSemaine);
             this.Name = "frmRecette";
-            this.Text = "Recettes";
+            this.Text = "Recette";
             this.Load += new System.EventHandler(this.Recettes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecette)).EndInit();
             this.ResumeLayout(false);

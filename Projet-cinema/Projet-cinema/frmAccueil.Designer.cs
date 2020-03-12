@@ -56,6 +56,7 @@
             this.btnFilm.TabIndex = 1;
             this.btnFilm.Text = "Films";
             this.btnFilm.UseVisualStyleBackColor = false;
+            this.btnFilm.Click += new System.EventHandler(this.btnFilm_Click);
             // 
             // btnProjection
             // 
@@ -67,6 +68,7 @@
             this.btnProjection.TabIndex = 2;
             this.btnProjection.Text = "Projections";
             this.btnProjection.UseVisualStyleBackColor = false;
+            this.btnProjection.Click += new System.EventHandler(this.btnProjection_Click);
             // 
             // btnRecette
             // 
@@ -78,6 +80,7 @@
             this.btnRecette.TabIndex = 3;
             this.btnRecette.Text = "Recettes";
             this.btnRecette.UseVisualStyleBackColor = false;
+            this.btnRecette.Click += new System.EventHandler(this.btnRecette_Click);
             // 
             // frmAccueil
             // 
