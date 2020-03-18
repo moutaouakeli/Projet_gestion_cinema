@@ -9,10 +9,23 @@ namespace Projet_cinema
     public class Film
     {
         private string nom;
-        private List<Acteur> lstActeur;
+        //private List<Acteur> lstActeur;
         private Acteur acteur;
-       
         
+
+        private DBconnection dbcinema = new DBconnection();
+       
+
+        private string realisateur;
+
+        public string Realisateur
+        {
+            get { return realisateur; }
+            set { realisateur = value; }
+        }
+
+        
+
 
         public string Nom
         {
@@ -36,27 +49,7 @@ namespace Projet_cinema
             lstActeur = new List<Acteur>();
 
         }*/
-        public void AjouterFilm(string nom, string description, string acteur, string realisateur)
-        {
-            //string infoActeur= acteur.Nom + acteur.Prenom;
-
-             
-           
-            
-
-
-
-        }
-        public void ModifierFilm()
-        {
-           
-
-        }
-        public void SupprimerFilm()
-        {
-
-
-        }
+       
         
 
     }

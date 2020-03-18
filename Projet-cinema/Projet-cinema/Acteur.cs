@@ -21,7 +21,7 @@ namespace Projet_cinema
         public string Prenom
         {
             get { return prenom; }
-            
+            set { prenom = value; }
         }
         public Acteur(string nom, string prenom)
         {

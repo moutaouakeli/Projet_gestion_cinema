@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblNomRealisateur = new System.Windows.Forms.Label();
-            this.lblActeurs = new System.Windows.Forms.Label();
-            this.lblNomFilm = new System.Windows.Forms.Label();
+            this.lblproducer = new System.Windows.Forms.Label();
+            this.lblActors = new System.Windows.Forms.Label();
+            this.lblNameFilm = new System.Windows.Forms.Label();
             this.dgvListeFilms = new System.Windows.Forms.DataGridView();
-            this.btnSupprimerFilm = new System.Windows.Forms.Button();
-            this.btnModifierFilm = new System.Windows.Forms.Button();
-            this.btnAjouterFilm = new System.Windows.Forms.Button();
-            this.txtActeurs = new System.Windows.Forms.TextBox();
+            this.btnRemoveFilm = new System.Windows.Forms.Button();
+            this.btnUpdateFilm = new System.Windows.Forms.Button();
+            this.btnAddFilm = new System.Windows.Forms.Button();
+            this.txtActors = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtRealisateur = new System.Windows.Forms.TextBox();
-            this.txtNomFilm = new System.Windows.Forms.TextBox();
+            this.txtProducer = new System.Windows.Forms.TextBox();
+            this.txtNameFilm = new System.Windows.Forms.TextBox();
             this.btnChercherActeur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListeFilms)).BeginInit();
             this.SuspendLayout();
@@ -56,42 +56,42 @@
             this.lblDescription.Text = "Description :";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNomRealisateur
+            // lblproducer
             // 
-            this.lblNomRealisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNomRealisateur.AutoSize = true;
-            this.lblNomRealisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomRealisateur.Location = new System.Drawing.Point(2, 162);
-            this.lblNomRealisateur.Name = "lblNomRealisateur";
-            this.lblNomRealisateur.Size = new System.Drawing.Size(113, 24);
-            this.lblNomRealisateur.TabIndex = 1;
-            this.lblNomRealisateur.Text = "Réalisateur :";
-            this.lblNomRealisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblproducer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblproducer.AutoSize = true;
+            this.lblproducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblproducer.Location = new System.Drawing.Point(2, 162);
+            this.lblproducer.Name = "lblproducer";
+            this.lblproducer.Size = new System.Drawing.Size(113, 24);
+            this.lblproducer.TabIndex = 1;
+            this.lblproducer.Text = "Réalisateur :";
+            this.lblproducer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblActeurs
+            // lblActors
             // 
-            this.lblActeurs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblActeurs.AutoSize = true;
-            this.lblActeurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActeurs.Location = new System.Drawing.Point(2, 256);
-            this.lblActeurs.Name = "lblActeurs";
-            this.lblActeurs.Size = new System.Drawing.Size(84, 24);
-            this.lblActeurs.TabIndex = 2;
-            this.lblActeurs.Text = "Acteurs :";
-            this.lblActeurs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblActors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblActors.AutoSize = true;
+            this.lblActors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActors.Location = new System.Drawing.Point(2, 256);
+            this.lblActors.Name = "lblActors";
+            this.lblActors.Size = new System.Drawing.Size(84, 24);
+            this.lblActors.TabIndex = 2;
+            this.lblActors.Text = "Acteurs :";
+            this.lblActors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNomFilm
+            // lblNameFilm
             // 
-            this.lblNomFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNomFilm.AutoSize = true;
-            this.lblNomFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomFilm.Location = new System.Drawing.Point(2, 78);
-            this.lblNomFilm.Name = "lblNomFilm";
-            this.lblNomFilm.Size = new System.Drawing.Size(121, 24);
-            this.lblNomFilm.TabIndex = 0;
-            this.lblNomFilm.Text = "Nom du film :";
-            this.lblNomFilm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNomFilm.Click += new System.EventHandler(this.label1_Click);
+            this.lblNameFilm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNameFilm.AutoSize = true;
+            this.lblNameFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameFilm.Location = new System.Drawing.Point(2, 78);
+            this.lblNameFilm.Name = "lblNameFilm";
+            this.lblNameFilm.Size = new System.Drawing.Size(121, 24);
+            this.lblNameFilm.TabIndex = 0;
+            this.lblNameFilm.Text = "Nom du film :";
+            this.lblNameFilm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNameFilm.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvListeFilms
             // 
@@ -106,48 +106,48 @@
             this.dgvListeFilms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListeFilms_CellContentClick);
             this.dgvListeFilms.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvListeFilms_MouseClick);
             // 
-            // btnSupprimerFilm
+            // btnRemoveFilm
             // 
-            this.btnSupprimerFilm.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnSupprimerFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimerFilm.Location = new System.Drawing.Point(885, 3);
-            this.btnSupprimerFilm.Name = "btnSupprimerFilm";
-            this.btnSupprimerFilm.Size = new System.Drawing.Size(175, 59);
-            this.btnSupprimerFilm.TabIndex = 11;
-            this.btnSupprimerFilm.Text = "Supprimer";
-            this.btnSupprimerFilm.UseVisualStyleBackColor = false;
-            this.btnSupprimerFilm.Click += new System.EventHandler(this.btnSupprimerFilm_Click);
+            this.btnRemoveFilm.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnRemoveFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveFilm.Location = new System.Drawing.Point(885, 3);
+            this.btnRemoveFilm.Name = "btnRemoveFilm";
+            this.btnRemoveFilm.Size = new System.Drawing.Size(175, 59);
+            this.btnRemoveFilm.TabIndex = 11;
+            this.btnRemoveFilm.Text = "Supprimer";
+            this.btnRemoveFilm.UseVisualStyleBackColor = false;
+            this.btnRemoveFilm.Click += new System.EventHandler(this.btnSupprimerFilm_Click);
             // 
-            // btnModifierFilm
+            // btnUpdateFilm
             // 
-            this.btnModifierFilm.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnModifierFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifierFilm.Location = new System.Drawing.Point(643, 3);
-            this.btnModifierFilm.Name = "btnModifierFilm";
-            this.btnModifierFilm.Size = new System.Drawing.Size(175, 59);
-            this.btnModifierFilm.TabIndex = 10;
-            this.btnModifierFilm.Text = "Modifier";
-            this.btnModifierFilm.UseVisualStyleBackColor = false;
-            this.btnModifierFilm.Click += new System.EventHandler(this.btnModifierFilm_Click);
+            this.btnUpdateFilm.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnUpdateFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateFilm.Location = new System.Drawing.Point(643, 3);
+            this.btnUpdateFilm.Name = "btnUpdateFilm";
+            this.btnUpdateFilm.Size = new System.Drawing.Size(175, 59);
+            this.btnUpdateFilm.TabIndex = 10;
+            this.btnUpdateFilm.Text = "Modifier";
+            this.btnUpdateFilm.UseVisualStyleBackColor = false;
+            this.btnUpdateFilm.Click += new System.EventHandler(this.btnModifierFilm_Click);
             // 
-            // btnAjouterFilm
+            // btnAddFilm
             // 
-            this.btnAjouterFilm.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnAjouterFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterFilm.Location = new System.Drawing.Point(396, 3);
-            this.btnAjouterFilm.Name = "btnAjouterFilm";
-            this.btnAjouterFilm.Size = new System.Drawing.Size(175, 59);
-            this.btnAjouterFilm.TabIndex = 9;
-            this.btnAjouterFilm.Text = "Ajouter";
-            this.btnAjouterFilm.UseVisualStyleBackColor = false;
-            this.btnAjouterFilm.Click += new System.EventHandler(this.btnAjouterFilm_Click_1);
+            this.btnAddFilm.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAddFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFilm.Location = new System.Drawing.Point(396, 3);
+            this.btnAddFilm.Name = "btnAddFilm";
+            this.btnAddFilm.Size = new System.Drawing.Size(175, 59);
+            this.btnAddFilm.TabIndex = 9;
+            this.btnAddFilm.Text = "Ajouter";
+            this.btnAddFilm.UseVisualStyleBackColor = false;
+            this.btnAddFilm.Click += new System.EventHandler(this.btnAjouterFilm_Click_1);
             // 
-            // txtActeurs
+            // txtActors
             // 
-            this.txtActeurs.Location = new System.Drawing.Point(122, 258);
-            this.txtActeurs.Name = "txtActeurs";
-            this.txtActeurs.Size = new System.Drawing.Size(148, 20);
-            this.txtActeurs.TabIndex = 16;
+            this.txtActors.Location = new System.Drawing.Point(122, 258);
+            this.txtActors.Name = "txtActors";
+            this.txtActors.Size = new System.Drawing.Size(148, 20);
+            this.txtActors.TabIndex = 16;
             // 
             // txtDescription
             // 
@@ -158,19 +158,20 @@
             this.txtDescription.TabIndex = 15;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtActeurs_TextChanged);
             // 
-            // txtRealisateur
+            // txtProducer
             // 
-            this.txtRealisateur.Location = new System.Drawing.Point(122, 164);
-            this.txtRealisateur.Name = "txtRealisateur";
-            this.txtRealisateur.Size = new System.Drawing.Size(265, 20);
-            this.txtRealisateur.TabIndex = 14;
+            this.txtProducer.Location = new System.Drawing.Point(122, 164);
+            this.txtProducer.Name = "txtProducer";
+            this.txtProducer.Size = new System.Drawing.Size(265, 20);
+            this.txtProducer.TabIndex = 14;
             // 
-            // txtNomFilm
+            // txtNameFilm
             // 
-            this.txtNomFilm.Location = new System.Drawing.Point(122, 78);
-            this.txtNomFilm.Name = "txtNomFilm";
-            this.txtNomFilm.Size = new System.Drawing.Size(265, 20);
-            this.txtNomFilm.TabIndex = 13;
+            this.txtNameFilm.Location = new System.Drawing.Point(122, 78);
+            this.txtNameFilm.Name = "txtNameFilm";
+            this.txtNameFilm.Size = new System.Drawing.Size(265, 20);
+            this.txtNameFilm.TabIndex = 13;
+            this.txtNameFilm.TextChanged += new System.EventHandler(this.txtNomFilm_TextChanged);
             // 
             // btnChercherActeur
             // 
@@ -190,18 +191,18 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1073, 624);
             this.Controls.Add(this.btnChercherActeur);
-            this.Controls.Add(this.txtActeurs);
+            this.Controls.Add(this.txtActors);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtRealisateur);
-            this.Controls.Add(this.txtNomFilm);
+            this.Controls.Add(this.txtProducer);
+            this.Controls.Add(this.txtNameFilm);
             this.Controls.Add(this.dgvListeFilms);
-            this.Controls.Add(this.btnSupprimerFilm);
-            this.Controls.Add(this.btnModifierFilm);
-            this.Controls.Add(this.btnAjouterFilm);
+            this.Controls.Add(this.btnRemoveFilm);
+            this.Controls.Add(this.btnUpdateFilm);
+            this.Controls.Add(this.btnAddFilm);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.lblActeurs);
-            this.Controls.Add(this.lblNomRealisateur);
-            this.Controls.Add(this.lblNomFilm);
+            this.Controls.Add(this.lblActors);
+            this.Controls.Add(this.lblproducer);
+            this.Controls.Add(this.lblNameFilm);
             this.Name = "frmFilms";
             this.Text = "Films";
             this.Load += new System.EventHandler(this.frmFilms_Load);
@@ -213,17 +214,17 @@
 
         #endregion
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblNomFilm;
-        private System.Windows.Forms.Label lblNomRealisateur;
-        private System.Windows.Forms.Label lblActeurs;
+        private System.Windows.Forms.Label lblNameFilm;
+        private System.Windows.Forms.Label lblproducer;
+        private System.Windows.Forms.Label lblActors;
         private System.Windows.Forms.DataGridView dgvListeFilms;
-        private System.Windows.Forms.Button btnSupprimerFilm;
-        private System.Windows.Forms.Button btnModifierFilm;
-        private System.Windows.Forms.Button btnAjouterFilm;
-        private System.Windows.Forms.TextBox txtActeurs;
+        private System.Windows.Forms.Button btnRemoveFilm;
+        private System.Windows.Forms.Button btnUpdateFilm;
+        private System.Windows.Forms.Button btnAddFilm;
+        private System.Windows.Forms.TextBox txtActors;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtRealisateur;
-        private System.Windows.Forms.TextBox txtNomFilm;
+        private System.Windows.Forms.TextBox txtProducer;
+        private System.Windows.Forms.TextBox txtNameFilm;
         private System.Windows.Forms.Button btnChercherActeur;
     }
 }

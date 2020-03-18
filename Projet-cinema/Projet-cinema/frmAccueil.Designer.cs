@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAchatBillets = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.btnFilm = new System.Windows.Forms.Button();
             this.btnProjection = new System.Windows.Forms.Button();
             this.btnRecette = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAchatBillets
+            // btnTicket
             // 
-            this.btnAchatBillets.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnAchatBillets.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAchatBillets.Location = new System.Drawing.Point(58, 29);
-            this.btnAchatBillets.Name = "btnAchatBillets";
-            this.btnAchatBillets.Size = new System.Drawing.Size(264, 75);
-            this.btnAchatBillets.TabIndex = 0;
-            this.btnAchatBillets.Text = "Billets";
-            this.btnAchatBillets.UseVisualStyleBackColor = false;
-            this.btnAchatBillets.Click += new System.EventHandler(this.button1_Click);
+            this.btnTicket.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicket.Location = new System.Drawing.Point(58, 29);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(264, 75);
+            this.btnTicket.TabIndex = 0;
+            this.btnTicket.Text = "Billets";
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnFilm
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.btnRecette);
             this.Controls.Add(this.btnProjection);
             this.Controls.Add(this.btnFilm);
-            this.Controls.Add(this.btnAchatBillets);
+            this.Controls.Add(this.btnTicket);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.ResumeLayout(false);
@@ -100,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAchatBillets;
+        private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnFilm;
         private System.Windows.Forms.Button btnProjection;
         private System.Windows.Forms.Button btnRecette;

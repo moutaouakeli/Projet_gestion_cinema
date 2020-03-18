@@ -19,6 +19,7 @@ namespace Projet_cinema
             InitializeComponent();
         }
         DataTable table = new DataTable();
+        DBconnection conn = new DBconnection();
         
         int index;
         private void label1_Click(object sender, EventArgs e)
@@ -42,7 +43,6 @@ namespace Projet_cinema
         private void frmFilms_Load(object sender, EventArgs e)
         {
             
-
             //En-têtes
             table.Columns.Add("Nom du film", typeof(string));
             table.Columns.Add("Réalisateur", typeof(string));
@@ -76,8 +76,9 @@ namespace Projet_cinema
 
         private void btnAjouterFilm_Click_1(object sender, EventArgs e)
         {
-            table.Rows.Add(txtNomFilm.Text,txtRealisateur.Text,txtActeurs.Text,txtDescription.Text);
+            table.Rows.Add(txtNameFilm.Text,txtProducer.Text,txtActors.Text,txtDescription.Text);
 
+          //  conn.AddFilm(txtNameFilm.Text,txtDescription.Text,txtProducer.Text );
 
         }
 
@@ -93,9 +94,9 @@ namespace Projet_cinema
 
              index = e.RowIndex;
             DataGridViewRow selectesRow = dgvListeFilms.Rows[index];
-            txtNomFilm.Text = selectesRow.Cells[0].Value.ToString();
-            txtRealisateur.Text = selectesRow.Cells[1].Value.ToString();
-            txtActeurs.Text = selectesRow.Cells[2].Value.ToString();
+            txtNameFilm.Text = selectesRow.Cells[0].Value.ToString();
+            txtProducer.Text = selectesRow.Cells[1].Value.ToString();
+            txtActors.Text = selectesRow.Cells[2].Value.ToString();
             txtDescription.Text = selectesRow.Cells[3].Value.ToString();
 
 
@@ -106,9 +107,9 @@ namespace Projet_cinema
         private void btnModifierFilm_Click(object sender, EventArgs e)
         {
             DataGridViewRow  newRows = dgvListeFilms.Rows[index];
-            newRows.Cells[0].Value = txtNomFilm.Text;
-            newRows.Cells[1].Value = txtRealisateur.Text;
-            newRows.Cells[2].Value = txtActeurs.Text;
+            newRows.Cells[0].Value = txtNameFilm.Text;
+            newRows.Cells[1].Value = txtProducer.Text;
+            newRows.Cells[2].Value = txtActors.Text;
             newRows.Cells[3].Value = txtDescription.Text;
 
         }
@@ -117,6 +118,11 @@ namespace Projet_cinema
         {
             index = dgvListeFilms.CurrentCell.RowIndex;
             dgvListeFilms.Rows.RemoveAt(index);
+        }
+
+        private void txtNomFilm_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

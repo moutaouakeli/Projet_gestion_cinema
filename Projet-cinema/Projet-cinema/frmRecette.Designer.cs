@@ -31,8 +31,6 @@
             this.lblDateSemaine = new System.Windows.Forms.Label();
             this.btnImprimer = new System.Windows.Forms.Button();
             this.dgvRecette = new System.Windows.Forms.DataGridView();
-            this.DateAchat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrixTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecette)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,27 +58,13 @@
             // dgvRecette
             // 
             this.dgvRecette.AllowUserToOrderColumns = true;
+            this.dgvRecette.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecette.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecette.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DateAchat,
-            this.PrixTotal});
             this.dgvRecette.Location = new System.Drawing.Point(28, 75);
             this.dgvRecette.Name = "dgvRecette";
             this.dgvRecette.Size = new System.Drawing.Size(641, 429);
             this.dgvRecette.TabIndex = 7;
             this.dgvRecette.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // DateAchat
-            // 
-            this.DateAchat.HeaderText = "Date d\'achat";
-            this.DateAchat.Name = "DateAchat";
-            this.DateAchat.Width = 300;
-            // 
-            // PrixTotal
-            // 
-            this.PrixTotal.HeaderText = "Prix total";
-            this.PrixTotal.Name = "PrixTotal";
-            this.PrixTotal.Width = 300;
             // 
             // frmRecette
             // 
@@ -104,7 +88,5 @@
         private System.Windows.Forms.Label lblDateSemaine;
         private System.Windows.Forms.Button btnImprimer;
         private System.Windows.Forms.DataGridView dgvRecette;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateAchat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrixTotal;
     }
 }

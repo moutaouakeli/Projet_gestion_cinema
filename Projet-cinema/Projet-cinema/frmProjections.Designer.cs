@@ -42,11 +42,6 @@
             this.cbSalleProj = new System.Windows.Forms.ComboBox();
             this.cbQualiteProj = new System.Windows.Forms.ComboBox();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
-            this.NomFilm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qualite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateProj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,13 +130,8 @@
             // dgvFilm
             // 
             this.dgvFilm.AllowUserToOrderColumns = true;
+            this.dgvFilm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFilm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomFilm,
-            this.Salle,
-            this.Qualite,
-            this.DateProj,
-            this.DateFin});
             this.dgvFilm.Location = new System.Drawing.Point(383, 82);
             this.dgvFilm.Name = "dgvFilm";
             this.dgvFilm.Size = new System.Drawing.Size(717, 536);
@@ -200,36 +190,6 @@
             this.dtpDateFin.Size = new System.Drawing.Size(244, 20);
             this.dtpDateFin.TabIndex = 27;
             // 
-            // NomFilm
-            // 
-            this.NomFilm.HeaderText = "Nom du film";
-            this.NomFilm.Name = "NomFilm";
-            this.NomFilm.Width = 135;
-            // 
-            // Salle
-            // 
-            this.Salle.HeaderText = "Salle";
-            this.Salle.Name = "Salle";
-            this.Salle.Width = 135;
-            // 
-            // Qualite
-            // 
-            this.Qualite.HeaderText = "Qualité";
-            this.Qualite.Name = "Qualite";
-            this.Qualite.Width = 135;
-            // 
-            // DateProj
-            // 
-            this.DateProj.HeaderText = "Date de la projection";
-            this.DateProj.Name = "DateProj";
-            this.DateProj.Width = 135;
-            // 
-            // DateFin
-            // 
-            this.DateFin.HeaderText = "Date de fin";
-            this.DateFin.Name = "DateFin";
-            this.DateFin.Width = 135;
-            // 
             // frmProjections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,10 +233,5 @@
         private System.Windows.Forms.ComboBox cbSalleProj;
         private System.Windows.Forms.ComboBox cbQualiteProj;
         private System.Windows.Forms.DateTimePicker dtpDateFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomFilm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Salle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qualite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateProj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
     }
 }
