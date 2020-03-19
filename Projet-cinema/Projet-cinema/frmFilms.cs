@@ -57,6 +57,8 @@ namespace Projet_cinema
             table.Rows.Add("Film4", "Réalisateur4", "Acteur4", "Description4");
 
             dgvListeFilms.DataSource = table;
+
+            
         }
 
         private void txtActeurs_TextChanged(object sender, EventArgs e)
@@ -76,9 +78,27 @@ namespace Projet_cinema
 
         private void btnAjouterFilm_Click_1(object sender, EventArgs e)
         {
+
+           // frmActors frmactors = new frmActors();
+            
+
+          /*  foreach (var txtActors in )
+            {
+
+                if (txtActors.Text==)
+                {
+                    txtActors2.Text == ;
+                    
+                }
+            }
+            txtActors.Text == string.Empty;
+            txtActors.Text = "";*/
+
             table.Rows.Add(txtNameFilm.Text,txtProducer.Text,txtActors.Text,txtDescription.Text);
 
-          //  conn.AddFilm(txtNameFilm.Text,txtDescription.Text,txtProducer.Text );
+            //conn.GetFilmsName(txtProducer.Text);
+
+         //conn.AddFilm(txtNameFilm.Text,txtDescription.Text,txtProducer.text );
 
         }
 

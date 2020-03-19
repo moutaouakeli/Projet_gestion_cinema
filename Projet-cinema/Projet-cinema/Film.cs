@@ -8,29 +8,29 @@ namespace Projet_cinema
 {
     public class Film
     {
-        private string nom;
+        private string name;
         //private List<Acteur> lstActeur;
-        private Acteur acteur;
+        //private Acteur acteur;
         
 
         private DBconnection dbcinema = new DBconnection();
        
 
-        private string realisateur;
+        private string producer;
 
-        public string Realisateur
+        public string Producer_id
         {
-            get { return realisateur; }
-            set { realisateur = value; }
+            get { return producer; }
+            set { producer = value; }
         }
 
         
 
 
-        public string Nom
+        public string Name
         {
-            get { return nom; }
-            set { nom = value; }
+            get { return name; }
+            set { name = value; }
         }
 
         private string description;

@@ -70,6 +70,12 @@
     <Compile Include="Acteur.cs" />
     <Compile Include="Billet.cs" />
     <Compile Include="DBconnection.cs" />
+    <Compile Include="frmActors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActors.Designer.cs">
+      <DependentUpon>frmActors.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBillets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Tarif.cs" />
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActors.resx">
+      <DependentUpon>frmActors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBillets.resx">
       <DependentUpon>frmBillets.cs</DependentUpon>
