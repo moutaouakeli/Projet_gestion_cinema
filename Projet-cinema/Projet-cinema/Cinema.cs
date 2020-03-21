@@ -8,31 +8,31 @@ namespace Projet_cinema
 {
     public class Cinema
     {
-        private string nom;
-        private string adresse;
-        private DateTime horraire;
+        private string name;
+        private string address;
+        private DateTime openingTime;
         private string CP;
-        private string localisation;
+        private string locality;
 
-        private List<Salle> lstSalle;
+        //private List<Salle> lstSalle;
 
 
-        public string Nom
+        public string Name
         {
-            get { return nom; }
+            get { return name; }
             
         }
-        public Cinema(string nom, string adresse, DateTime horraire)
+       /* public Cinema(string nom, string adresse, DateTime horraire)
         {
             this.nom = nom;
             this.adresse = adresse;
             this.horraire = horraire;
-            lstSalle = new List<Salle>();
+            //lstSalle = new List<Salle>();
 
-        }
+        }*/
         public string AfficherInfo()
         {
-            return nom + ", " + adresse + ", " + horraire;
+            return name + ", " + address + ", " + openingTime;
         }
     }
 }

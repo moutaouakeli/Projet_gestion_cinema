@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acteur.cs" />
+    <Compile Include="Actor.cs" />
     <Compile Include="Billet.cs" />
     <Compile Include="DBconnection.cs" />
     <Compile Include="frmActors.cs">
@@ -97,6 +97,7 @@
       <DependentUpon>frmFilms.cs</DependentUpon>
     </Compile>
     <Compile Include="Personne.cs" />
+    <Compile Include="Producer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projection.cs" />
     <Compile Include="frmProjections.cs">
@@ -114,8 +115,8 @@
     <Compile Include="frmRecette.Designer.cs">
       <DependentUpon>frmRecette.cs</DependentUpon>
     </Compile>
-    <Compile Include="Salle.cs" />
-    <Compile Include="Tarif.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="Price.cs" />
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </EmbeddedResource>

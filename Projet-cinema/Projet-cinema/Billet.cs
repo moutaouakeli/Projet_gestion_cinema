@@ -9,7 +9,7 @@ namespace Projet_cinema
     public class Billet
     {
         private DateTime date;
-        private Tarif tarif;
+        private Price tarif;
         private Rabais rabais;
 
         public DateTime Date
@@ -27,7 +27,7 @@ namespace Projet_cinema
         }
 
         
-        public Billet(DateTime date, int quantite, Tarif tarif, Rabais rabais)
+        public Billet(DateTime date, int quantite, Price tarif, Rabais rabais)
         {
             this.date = date;
             this.quantite = quantite;
@@ -35,7 +35,7 @@ namespace Projet_cinema
             this.rabais = rabais;
 
         }
-        public void AchatBillet(Tarif tarif,Rabais rabais)
+        public void AchatBillet(Price tarif,Rabais rabais)
         {
 
 

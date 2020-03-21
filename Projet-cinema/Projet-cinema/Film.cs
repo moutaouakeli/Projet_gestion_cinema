@@ -16,12 +16,12 @@ namespace Projet_cinema
         private DBconnection dbcinema = new DBconnection();
        
 
-        private string producer;
+        private string producer_id;
 
         public string Producer_id
         {
-            get { return producer; }
-            set { producer = value; }
+            get { return producer_id; }
+            set { producer_id = value; }
         }
 
         

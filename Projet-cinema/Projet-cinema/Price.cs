@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_cinema
 {
-    public class Tarif
+    public class Price
     {
         private double prix;
 

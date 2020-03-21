@@ -16,7 +16,7 @@ namespace Projet_cinema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new frmAccueil());
+             Application.Run(new frmAccueil());
             DBconnection conn = new DBconnection();
            
         }
