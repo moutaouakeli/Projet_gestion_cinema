@@ -103,7 +103,7 @@
             this.btnSupprimer.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.Location = new System.Drawing.Point(1233, 15);
-            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(233, 73);
             this.btnSupprimer.TabIndex = 6;
@@ -116,7 +116,7 @@
             this.btnModifier.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifier.Location = new System.Drawing.Point(876, 15);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(4);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(233, 73);
             this.btnModifier.TabIndex = 5;
@@ -129,7 +129,7 @@
             this.btnAjouterFilm.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnAjouterFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjouterFilm.Location = new System.Drawing.Point(511, 15);
-            this.btnAjouterFilm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjouterFilm.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjouterFilm.Name = "btnAjouterFilm";
             this.btnAjouterFilm.Size = new System.Drawing.Size(233, 73);
             this.btnAjouterFilm.TabIndex = 4;
@@ -143,7 +143,7 @@
             this.dgvFilm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFilm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFilm.Location = new System.Drawing.Point(511, 101);
-            this.dgvFilm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFilm.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFilm.Name = "dgvFilm";
             this.dgvFilm.RowHeadersWidth = 51;
             this.dgvFilm.Size = new System.Drawing.Size(956, 660);
@@ -167,7 +167,7 @@
             // dtpDateDebut
             // 
             this.dtpDateDebut.Location = new System.Drawing.Point(169, 474);
-            this.dtpDateDebut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateDebut.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(324, 22);
             this.dtpDateDebut.TabIndex = 10;
@@ -177,17 +177,16 @@
             // 
             this.cbNomFilmProj.FormattingEnabled = true;
             this.cbNomFilmProj.Location = new System.Drawing.Point(169, 103);
-            this.cbNomFilmProj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNomFilmProj.Margin = new System.Windows.Forms.Padding(4);
             this.cbNomFilmProj.Name = "cbNomFilmProj";
             this.cbNomFilmProj.Size = new System.Drawing.Size(324, 24);
             this.cbNomFilmProj.TabIndex = 26;
-            this.cbNomFilmProj.SelectedIndexChanged += new System.EventHandler(this.cbNomFilmProj_SelectedIndexChanged);
             // 
             // cbSalleProj
             // 
             this.cbSalleProj.FormattingEnabled = true;
             this.cbSalleProj.Location = new System.Drawing.Point(169, 215);
-            this.cbSalleProj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSalleProj.Margin = new System.Windows.Forms.Padding(4);
             this.cbSalleProj.Name = "cbSalleProj";
             this.cbSalleProj.Size = new System.Drawing.Size(324, 24);
             this.cbSalleProj.TabIndex = 25;
@@ -196,7 +195,7 @@
             // 
             this.cbQualiteProj.FormattingEnabled = true;
             this.cbQualiteProj.Location = new System.Drawing.Point(169, 343);
-            this.cbQualiteProj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbQualiteProj.Margin = new System.Windows.Forms.Padding(4);
             this.cbQualiteProj.Name = "cbQualiteProj";
             this.cbQualiteProj.Size = new System.Drawing.Size(324, 24);
             this.cbQualiteProj.TabIndex = 24;
@@ -204,7 +203,7 @@
             // dtpDateFin
             // 
             this.dtpDateFin.Location = new System.Drawing.Point(169, 599);
-            this.dtpDateFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateFin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateFin.Name = "dtpDateFin";
             this.dtpDateFin.Size = new System.Drawing.Size(324, 22);
             this.dtpDateFin.TabIndex = 27;
@@ -229,7 +228,7 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.lblNomFilm);
             this.Controls.Add(this.btnAjouterFilm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProjections";
             this.Text = "Projections";
             this.Load += new System.EventHandler(this.frmProjections_Load);

@@ -38,9 +38,10 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.Location = new System.Drawing.Point(58, 29);
+            this.btnTicket.Location = new System.Drawing.Point(77, 36);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(264, 75);
+            this.btnTicket.Size = new System.Drawing.Size(352, 92);
             this.btnTicket.TabIndex = 0;
             this.btnTicket.Text = "Billets";
             this.btnTicket.UseVisualStyleBackColor = false;
@@ -50,9 +51,10 @@
             // 
             this.btnFilm.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnFilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilm.Location = new System.Drawing.Point(58, 142);
+            this.btnFilm.Location = new System.Drawing.Point(77, 175);
+            this.btnFilm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFilm.Name = "btnFilm";
-            this.btnFilm.Size = new System.Drawing.Size(264, 75);
+            this.btnFilm.Size = new System.Drawing.Size(352, 92);
             this.btnFilm.TabIndex = 1;
             this.btnFilm.Text = "Films";
             this.btnFilm.UseVisualStyleBackColor = false;
@@ -62,9 +64,10 @@
             // 
             this.btnProjection.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnProjection.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProjection.Location = new System.Drawing.Point(58, 257);
+            this.btnProjection.Location = new System.Drawing.Point(77, 316);
+            this.btnProjection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProjection.Name = "btnProjection";
-            this.btnProjection.Size = new System.Drawing.Size(264, 75);
+            this.btnProjection.Size = new System.Drawing.Size(352, 92);
             this.btnProjection.TabIndex = 2;
             this.btnProjection.Text = "Projections";
             this.btnProjection.UseVisualStyleBackColor = false;
@@ -74,24 +77,26 @@
             // 
             this.btnRecette.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecette.Location = new System.Drawing.Point(58, 369);
+            this.btnRecette.Location = new System.Drawing.Point(77, 454);
+            this.btnRecette.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRecette.Name = "btnRecette";
-            this.btnRecette.Size = new System.Drawing.Size(264, 75);
+            this.btnRecette.Size = new System.Drawing.Size(352, 92);
             this.btnRecette.TabIndex = 3;
-            this.btnRecette.Text = "Recettes";
+            this.btnRecette.Text = "Recette";
             this.btnRecette.UseVisualStyleBackColor = false;
             this.btnRecette.Click += new System.EventHandler(this.btnRecette_Click);
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(395, 473);
+            this.ClientSize = new System.Drawing.Size(527, 582);
             this.Controls.Add(this.btnRecette);
             this.Controls.Add(this.btnProjection);
             this.Controls.Add(this.btnFilm);
             this.Controls.Add(this.btnTicket);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.ResumeLayout(false);

@@ -97,10 +97,7 @@ namespace Projet_cinema
 
         }
 
-        private void cbNomFilmProj_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {

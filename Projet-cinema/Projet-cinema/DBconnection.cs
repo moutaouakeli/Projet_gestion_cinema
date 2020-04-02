@@ -207,13 +207,35 @@ namespace Projet_cinema
 
             return sqliteConn.LastInsertRowId;
         }
-        public long AddActors()
+        public long AddActors(string fName, string lName)
         {
-            string sql = "insert into actors (firstname,lastname) values ('Linda','Hamilton');insert into actors (firstname,lastname) values ('Suzy','Ami') ";
-            SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
+            /* string sql = "insert into actors (firstname,lastname) values ('Linda','Hamilton');insert into actors (firstname,lastname) values ('Suzy','Ami') ";
+             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
 
-            //GetProducer
-            command.ExecuteNonQuery();
+             //GetProducer
+             command.ExecuteNonQuery();*/
+
+            string sql1 = "select * from actors where firstname = '" + fName + "' and lastname = '" + lName + "'";
+            SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
+            SQLiteDataReader reader = command1.ExecuteReader();
+            if (reader.Read())
+            {
+                string id = reader["id"].ToString();
+                string sql2 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id) from films),'" + id + "')";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
+
+            }
+            else
+            {
+                string sql2 = "insert into actors (firstname,lastname) values ('" + fName + "','" + lName + "')";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
+                string sql3 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id) from films),(SELECT max(id) FROM actors))";
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+
+            }
 
 
 
@@ -221,56 +243,110 @@ namespace Projet_cinema
         }
 
 
-        public long AddFilm(string name,string description,string producersName,string actorsName)
+        public long AddFilm(string name,string description,string producersFName, string producersLName,string actorsFName, string actorsLName)
+        {
+
+            string sql1 = "select * from producers where firstname = '" + producersFName + "' and lastname = '" + producersLName + "'";
+            SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
+            SQLiteDataReader reader = command1.ExecuteReader();
+            if (reader.Read())  // recuperer au moins une ligne 
+            {
+                string id = reader["id"].ToString();
+
+                string sql3 = "insert into films(name, description, producers_id) values('" + name + "','" + description + "' , '" + id + "')";
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+            }
+            else
+            {
+                string sql2 = "INSERT into producers(firstname, lastname) values('" + producersFName + "','" + producersLName + "')";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
+
+                string sql3 = "insert into films(name, description, producers_id) values('" + name + "','" + description + "' ,(select max(id) from producers))";
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+
+            }
+            AddActors(actorsFName, actorsLName);
+
+
+            /* string sql1 = "INSERT into producers(firstname, lastname) values('" + producersFName + "','" + producersLName + "')";
+             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
+             command1.ExecuteNonQuery();
+
+
+
+             string sql2 = "insert into films(name, description, producers_id) values('"+name+ "','" +description+"' ,(select max(id) from producers))";
+             SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+             command2.ExecuteNonQuery();
+
+             string sql3 = "INSERT into actors(firstname, lastname) values('" + actorsFName + "','" + actorsLName + "')";
+             SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+             command3.ExecuteNonQuery();
+
+             string sql4 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id)from films),(SELECT max(id) FROM actors))";
+             SQLiteCommand command4 = new SQLiteCommand(sql4, sqliteConn);
+             command4.ExecuteNonQuery();*/
+
+
+
+
+
+            return sqliteConn.LastInsertRowId;
+        }
+
+        // A modifier entierement 
+        public long UpdateFilm(string name, string description, string producersFName, string producersLName, string actorsFName, string actorsLName)
         {
 
 
 
 
-            string sql1 = "INSERT into producers(firstname, lastname) values('" + producersName.Split(' ')[0] + "','" + producersName.Split(' ')[1] + "')";
+            string sql1 = "UPDATE producers SET firstname= '"+producersFName +"', lastname= '"+ producersLName+"' WHERE name='" + name + "'";
             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
             command1.ExecuteNonQuery();
 
-            
 
-            string sql2 = "insert into films(name, description, producers_id) values('"+name+ "','" +description+"' ,(select max(id) from producers))";
+
+            string sql2 = "insert into films(name, description, producers_id) values('" + name + "','" + description + "' ,(select max(id) from producers))";
             SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
             command2.ExecuteNonQuery();
 
-            string sql3 = "INSERT into actors(firstname, lastname) values('" + actorsName.Split(' ')[0] + "','" + actorsName.Split(' ')[1] + "')";
+            string sql3 = "INSERT into actors(firstname, lastname) values('" + actorsFName + "','" + actorsLName + "')";
             SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
             command3.ExecuteNonQuery();
 
             string sql4 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id)from films),(SELECT max(id) FROM actors))";
             SQLiteCommand command4 = new SQLiteCommand(sql4, sqliteConn);
             command4.ExecuteNonQuery();
-            
+
 
             return sqliteConn.LastInsertRowId;
         }
-       
-        public void RemoveFilms(string filmName)
+
+        public void RemoveFilms(string FilmId)
         {
-            string sql = "DELETE FROM films where name like '"+filmName+"'";
+            string sql = "DELETE FROM films where id like '"+ FilmId + "'";
             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
             command.ExecuteNonQuery();
 
             
         }
-        public void UpdateFilms(string name, string description, string producersName, string actorsName)
+       /* public void UpdateFilms(string name, string description, string producersFName, string producersLName, string actorsFName, string actorsLName)
         {
             
-            AddFilm(name, description, producersName, actorsName);
+            AddFilm(name, description, producersFName, producersLName, actorsFName, actorsLName);
             
-        }
+        }*/
 
         public SQLiteDataReader GetFilms()
         {
 
-            string sql = "select F.name,P.firstName,P.lastName, A.firstName, A.lastName, F.Description from films F, producers P, actors A, Films_has_Actors FA where F.Producers_id = P.id and F.id = FA.films_id and A.id = FA.Actors_id";
+            string sql = "select F.id, F.name,P.firstName,P.lastName, A.firstName, A.lastName, F.Description from films F, producers P, actors A, Films_has_Actors FA where F.Producers_id = P.id and F.id = FA.films_id and A.id = FA.Actors_id";
             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
             SQLiteDataReader reader = command.ExecuteReader();
-    
+
             return reader;
         }
         public List<string> GetListFilms()
