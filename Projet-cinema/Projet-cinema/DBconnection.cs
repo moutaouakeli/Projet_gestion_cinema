@@ -13,21 +13,7 @@ namespace Projet_cinema
         SQLiteConnection sqliteConn;
         public DBconnection()
         {
-            /* if (File.Exists("dbCinema.db"))
-             {
-                 File.Delete("dbCinema.db");
-             }*/
-            // Créer une nouvelle connexion de la base de donnée
-           /* if (File.Exists("dbCinema.db"))
-            {
-                
-                Console.WriteLine("OK");
-            }
-            else
-            {
-                
-                Console.WriteLine("KO");
-            }*/
+            
             
 
             sqliteConn = new SQLiteConnection("Data Source=C:/Users/imane/source/repos/Projet_gestion_cinema/Projet-cinema/dbCinema.db; Version=3; Compress=True;");
@@ -156,21 +142,7 @@ namespace Projet_cinema
 
         }
 
-        /* public void CreateFilmsActors()
-         {
-             //Déclaration de la variable cmd, appel de la méthode publique CreateCommand
-             SQLiteCommand cmd = sqliteConn.CreateCommand();
-             //Déclaration de la variable createSQL, y stocke la requête SQL
-             string createSql = "CREATE TABLE IF NOT EXISTS filmsActors (id INTEGER PRIMARY KEY AUTOINCREMENT, actors_id INT, films_id INT)";
-             string foreignKey1 = "ALTER TABLE filmsActors ADD  CONSTRAINT FK_filmsActors_actors FOREIGN KEY(actors_id) REFERENCES actors(id)";
-             string foreignKey2 = "ALTER TABLE filmsActors ADD  CONSTRAINT FK_filmsActors_films FOREIGN KEY(films_id) REFERENCES films(id)";
-             //Affectation de la propriété CommandText avec la variable createSQL et foreign key
-             cmd.CommandText = createSql + foreignKey1 + foreignKey2;
-
-             //Appel la méthode ExecuteNonQuery qui exécute la requête
-             cmd.ExecuteNonQuery();
-
-         }*/
+        
         public long AddCinema()
         {
             string sql = "insert into cinemas (name,openingTime,Adresse,locality,cp) values ('Bel-Air','Lundi-Dimanche 15h-22h','Place Bel-Air 6','Yverdon-les-Bains','1400') ";
@@ -209,11 +181,7 @@ namespace Projet_cinema
         }
         public long AddActors(string fName, string lName)
         {
-            /* string sql = "insert into actors (firstname,lastname) values ('Linda','Hamilton');insert into actors (firstname,lastname) values ('Suzy','Ami') ";
-             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
-
-             //GetProducer
-             command.ExecuteNonQuery();*/
+            
 
             string sql1 = "select * from actors where firstname = '" + fName + "' and lastname = '" + lName + "'";
             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
@@ -241,7 +209,33 @@ namespace Projet_cinema
 
             return sqliteConn.LastInsertRowId;
         }
+        public void updateActor(string fName, string lName, string idFilm)
+        {
+            string sql1 = "select * from actors where firstname = '" + fName + "' and lastname = '" + lName + "'";
+            SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
+            SQLiteDataReader reader = command1.ExecuteReader();
+            if (reader.Read())
+            {
+                Console.WriteLine("Actor exist");
+                string id = reader["id"].ToString();
+                string sql2 = "update Films_has_Actors set Actors_id = '" + id + "' where films_id = '" + idFilm + "'";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
 
+            }
+            else
+            {
+                Console.WriteLine("Actor don't exist");
+                string sql2 = "insert into actors (firstname,lastname) values ('" + fName + "','" + lName + "')";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
+                string sql3 = "update Films_has_Actors set Actors_id = (SELECT max(id) FROM actors) where films_id = '" + idFilm + "'";
+
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+
+            }
+        }
 
         public long AddFilm(string name,string description,string producersFName, string producersLName,string actorsFName, string actorsLName)
         {
@@ -271,25 +265,6 @@ namespace Projet_cinema
             AddActors(actorsFName, actorsLName);
 
 
-            /* string sql1 = "INSERT into producers(firstname, lastname) values('" + producersFName + "','" + producersLName + "')";
-             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
-             command1.ExecuteNonQuery();
-
-
-
-             string sql2 = "insert into films(name, description, producers_id) values('"+name+ "','" +description+"' ,(select max(id) from producers))";
-             SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
-             command2.ExecuteNonQuery();
-
-             string sql3 = "INSERT into actors(firstname, lastname) values('" + actorsFName + "','" + actorsLName + "')";
-             SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
-             command3.ExecuteNonQuery();
-
-             string sql4 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id)from films),(SELECT max(id) FROM actors))";
-             SQLiteCommand command4 = new SQLiteCommand(sql4, sqliteConn);
-             command4.ExecuteNonQuery();*/
-
-
 
 
 
@@ -297,32 +272,35 @@ namespace Projet_cinema
         }
 
         // A modifier entierement 
-        public long UpdateFilm(string name, string description, string producersFName, string producersLName, string actorsFName, string actorsLName)
+        public void UpdateFilm(string idFilm, string name, string description, string producersFName, string producersLName, string actorsFName, string actorsLName)
         {
 
-
-
-
-            string sql1 = "UPDATE producers SET firstname= '"+producersFName +"', lastname= '"+ producersLName+"' WHERE name='" + name + "'";
+            string sql1 = "select * from producers where firstname = '" + producersFName + "' and lastname = '" + producersLName + "'";
             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
-            command1.ExecuteNonQuery();
+            SQLiteDataReader reader = command1.ExecuteReader();
+            if (reader.Read())  // recuperer au moins une ligne 
+            {
+                string id = reader["id"].ToString();
+
+                string sql3 = "update films set name='" + name + "', description='" + description + "' ,producers_id='" + id + "' where id='" + idFilm + "'";
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+            }
+            else
+            {
+                string sql2 = "INSERT into producers(firstname, lastname) values('" + producersFName + "','" + producersLName + "')";
+                SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
+                command2.ExecuteNonQuery();
+
+                string sql3 = "update films set name='" + name + "', description='" + description + "' ,producers_id=(select max(id) from producers) where id='" + idFilm + "'";
+                SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
+                command3.ExecuteNonQuery();
+
+            }
 
 
+           
 
-            string sql2 = "insert into films(name, description, producers_id) values('" + name + "','" + description + "' ,(select max(id) from producers))";
-            SQLiteCommand command2 = new SQLiteCommand(sql2, sqliteConn);
-            command2.ExecuteNonQuery();
-
-            string sql3 = "INSERT into actors(firstname, lastname) values('" + actorsFName + "','" + actorsLName + "')";
-            SQLiteCommand command3 = new SQLiteCommand(sql3, sqliteConn);
-            command3.ExecuteNonQuery();
-
-            string sql4 = "insert into Films_has_Actors(films_id, Actors_id) values((SELECT max(id)from films),(SELECT max(id) FROM actors))";
-            SQLiteCommand command4 = new SQLiteCommand(sql4, sqliteConn);
-            command4.ExecuteNonQuery();
-
-
-            return sqliteConn.LastInsertRowId;
         }
 
         public void RemoveFilms(string FilmId)
@@ -333,12 +311,7 @@ namespace Projet_cinema
 
             
         }
-       /* public void UpdateFilms(string name, string description, string producersFName, string producersLName, string actorsFName, string actorsLName)
-        {
-            
-            AddFilm(name, description, producersFName, producersLName, actorsFName, actorsLName);
-            
-        }*/
+       
 
         public SQLiteDataReader GetFilms()
         {
@@ -381,7 +354,7 @@ namespace Projet_cinema
         public SQLiteDataReader GetProjections()
         {
 
-            string sql = "select F.name,P.quality,P.projectionDate, P.dueDate, R.name from films F, projections P, rooms R where F.id = P.id and R.id = P.id";
+            string sql = "select P.id, F.name,P.quality,P.projectionDate, P.dueDate, R.name from films F, projections P, rooms R where F.id = P.Films_id and R.id = P.Rooms_id";
             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
             SQLiteDataReader reader = command.ExecuteReader();
 
@@ -395,31 +368,37 @@ namespace Projet_cinema
 
 
 
-            string sql1 = "INSERT into projections(projectionDate, dueDate,quality,Rooms_id,films_id) values('" + projectionDate + "','" + dueDate + "','" + quality +"' ,(select id from rooms where name like '" + room + "'),(select id from films where name like '" + name + "'))";
+            string sql1 = "INSERT into projections(ProjectionDate, DueDate,quality,Rooms_id,films_id) values('" + projectionDate + "','" + dueDate + "','" + quality + "' ,(select id from rooms where name like '" + room + "'),(select id from films where name like '" + name + "'))";
+            
+
             SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
             command1.ExecuteNonQuery();
 
 
             return sqliteConn.LastInsertRowId;
         }
-        public void RemoveProjections(string filmName)
+        public void RemoveProjections(string id)
         {
-            string sql = "DELETE FROM projections where films_id = (select id from films where name like '" + filmName + "')";
+            string sql = "DELETE FROM projections where id = '" + id + "'";
             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
             command.ExecuteNonQuery();
 
-            
+
         }
-        public void UpdateProj(string name, string quality, DateTime projectionDate, DateTime dueDate, string room)
+        public void UpdateProj(string idProj, string name, string quality, DateTime projectionDate, DateTime dueDate, string room)
         {
 
-            AddProjection(name, quality, projectionDate, dueDate, room);
-            
+            string sql1 = "UPDATE projections set ProjectionDate = '" + projectionDate + "', DueDate='" + dueDate + "',quality='" + quality + "',Rooms_id=(select id from rooms where name like '" + room + "'),films_id=(select id from films where name like '" + name + "') where id='" + idProj + "'";
+            //string sql1 = "INSERT into projections(ProjectionDate, DueDate,quality,Rooms_id,films_id) values('','','' ,(select id from rooms where name like '" + room + "'),(select id from films where name like '" + name + "'))";
+
+            SQLiteCommand command1 = new SQLiteCommand(sql1, sqliteConn);
+            command1.ExecuteNonQuery();
+
         }
 
         public void RemoveProjectionsAuto()
         {
-            string sql = "delete from projections where datetime('now','localtime') > DueDate;";
+            string sql = "delete from projections where strftime('%d-%m-%Y %H:%M:%S','now') > DueDate";
             SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
             command.ExecuteNonQuery();
 

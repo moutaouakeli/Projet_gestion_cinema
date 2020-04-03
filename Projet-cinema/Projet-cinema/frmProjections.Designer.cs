@@ -96,7 +96,7 @@
             this.lblNomFilm.TabIndex = 0;
             this.lblNomFilm.Text = "Nom du film :";
             this.lblNomFilm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNomFilm.Click += new System.EventHandler(this.lblNomFilm_Click);
+           
             // 
             // btnSupprimer
             // 
@@ -162,7 +162,7 @@
             this.lblDateDebut.TabIndex = 9;
             this.lblDateDebut.Text = "Projecté le :";
             this.lblDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDateDebut.Click += new System.EventHandler(this.lblDateDebut_Click);
+            
             // 
             // dtpDateDebut
             // 
@@ -171,7 +171,7 @@
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(324, 22);
             this.dtpDateDebut.TabIndex = 10;
-            this.dtpDateDebut.ValueChanged += new System.EventHandler(this.dtpDateDebut_ValueChanged);
+            
             // 
             // cbNomFilmProj
             // 
