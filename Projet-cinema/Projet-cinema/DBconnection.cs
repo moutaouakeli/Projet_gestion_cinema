@@ -13,16 +13,25 @@ namespace Projet_cinema
         SQLiteConnection sqliteConn;
         public DBconnection()
         {
-            
-            
+            /* ca ne marche pas 
+            if (File.Exists("dbCinema2.db"))
+            {
+                
+                File.Delete("dbCinema2.db");
+            }
+            // Create a new database connection:
+            sqliteConn = new SQLiteConnection("Data Source=dbCinema2.db; Version=3; Compress=True;");
+            // Open the connection:
+            sqliteConn.Open();*/
 
-            sqliteConn = new SQLiteConnection("Data Source=C:/Users/imane/source/repos/Projet_gestion_cinema/Projet-cinema/dbCinema.db; Version=3; Compress=True;");
+
+           sqliteConn = new SQLiteConnection("Data Source=C:/Users/imane/source/repos/Projet_gestion_cinema/Projet-cinema/dbCinema.db; Version=3; Compress=True;");
             // Ouvrir la connexion
             sqliteConn.Open();
 
             
-            //CreateProducers();
-            //CreateFilms();
+            CreateProducers();
+            CreateFilms();
             //CreateFilmsActors();
             CreateCinema();
             CreateRooms();
@@ -31,12 +40,12 @@ namespace Projet_cinema
             CreateProjections();
             CreateActors();
             CreateFilms_has_Actors();
-            //AddCinema();
-            // AddRooms();
+            AddCinema();
+             //AddRooms();
             //AddProducers();
             //AddActors();
             //AddCinema("Pathé", "Lundi-Dimane 10h-00h", "Rue du Port-Franc 16", "Lausanne", "1003");
-
+            //sqliteConn.Close();
 
         }
         
@@ -103,7 +112,7 @@ namespace Projet_cinema
             //Déclaration de la variable cmd, appel de la méthode publique CreateCommand
             SQLiteCommand cmd = sqliteConn.CreateCommand();
             //Déclaration de la variable createSQL, y stocke la requête SQL
-            string createSql = "CREATE TABLE IF NOT EXISTS projections (id INTEGER PRIMARY KEY AUTOINCREMENT, ProjectionDate DATE NOT NULL,DueDate DATE NOT NULL, Quality VARCHAR(15) NULL, Price DECIMAL(5,2) NULL,Rooms_id INT NOT NULL,Films_id INT NOT NULL,FOREIGN KEY (Rooms_id)REFERENCES Rooms (id),FOREIGN KEY (Films_id)REFERENCES Films (id))";
+            string createSql = "CREATE TABLE IF NOT EXISTS projections (id INTEGER PRIMARY KEY AUTOINCREMENT, ProjectionDate VARCHAR(100) NOT NULL,DueDate VARCHAR(100) NOT NULL, Quality VARCHAR(15) NULL, Price DECIMAL(5,2) NULL,Rooms_id INT NOT NULL,Films_id INT NOT NULL,FOREIGN KEY (Rooms_id)REFERENCES Rooms (id),FOREIGN KEY (Films_id)REFERENCES Films (id))";
 
             //Affectation de la propriété CommandText avec la variable createSQL 
             cmd.CommandText = createSql;
@@ -167,6 +176,7 @@ namespace Projet_cinema
 
             return sqliteConn.LastInsertRowId;
         }
+       
         public long AddProducers()
         {
             string sql = "insert into producers (firstname,lastname) values ('James','Cameron');insert into producers (firstname,lastname) values ('Sam','Worthington') ";

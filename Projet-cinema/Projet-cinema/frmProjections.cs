@@ -67,7 +67,7 @@ namespace Projet_cinema
             }
 
             dgvFilm.DataSource = table;
-            //dgvListeFilms.DataSource = table;
+            
 
 
             List<string> lstFilmsDB = conn.GetListFilms();
@@ -129,7 +129,7 @@ namespace Projet_cinema
             {
                 Console.WriteLine("OK PROJECTIONS");
                 table.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString());
-                //name = reader["firstname" + " " + "lastname"].ToString();
+                
             }
 
             dgvFilm.DataSource = table;
