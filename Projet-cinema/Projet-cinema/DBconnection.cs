@@ -40,7 +40,7 @@ namespace Projet_cinema
             CreateProjections();
             CreateActors();
             CreateFilms_has_Actors();
-            AddCinema();
+            //AddCinema();
              //AddRooms();
             //AddProducers();
             //AddActors();

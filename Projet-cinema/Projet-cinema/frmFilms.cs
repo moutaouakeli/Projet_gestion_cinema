@@ -239,5 +239,7 @@ namespace Projet_cinema
                 id = reader[0].ToString();
             }
         }
+
+        
     }
 }

@@ -112,6 +112,7 @@
             this.dgvListeFilms.Size = new System.Drawing.Size(885, 660);
             this.dgvListeFilms.TabIndex = 12;
             this.dgvListeFilms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListeFilms_CellClick);
+            
             // 
             // btnRemoveFilm
             // 

@@ -89,6 +89,8 @@ namespace Projet_cinema
             cbQualiteProj.Items.Add("FHD");
             cbQualiteProj.Items.Add("HD");
 
+            
+
             dtpDateDebut.Format = DateTimePickerFormat.Custom;
             dtpDateDebut.CustomFormat = "dd/MM/yyyy hh:mm:ss";
 
@@ -104,7 +106,7 @@ namespace Projet_cinema
             DBconnection conn = new DBconnection();
             
             conn.AddProjection(cbNomFilmProj.Text, cbQualiteProj.Text,dtpDateDebut.Value, dtpDateFin.Value, cbSalleProj.Text);
-            // table.Rows.Add(cbNomFilmProj.Text, cbQualiteProj.Text, dtpDateDebut.Value, dtpDateFin.Value, cbSalleProj.Text);
+            
 
             dgvFilm.ReadOnly = true;
             dgvFilm.AllowUserToAddRows = false;
@@ -141,6 +143,8 @@ namespace Projet_cinema
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             DBconnection conn = new DBconnection();
+
+            //Il faut cliquer sur l'id pour que ca se supprime
             conn.RemoveProjections(dgvFilm.CurrentCell.Value.ToString());
             index = dgvFilm.CurrentCell.RowIndex;
             dgvFilm.Rows.RemoveAt(index);
@@ -161,17 +165,7 @@ namespace Projet_cinema
             table.Columns.Add("Date de fin ", typeof(string));
             table.Columns.Add("Salle ", typeof(string));
 
-
-            SQLiteDataReader reader = conn.GetProjections();
-
-            while (reader.Read())
-            {
-                Console.WriteLine("OK PROJECTIONS");
-                table.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString());
-                //name = reader["firstname" + " " + "lastname"].ToString();
-            }
-
-            dgvFilm.DataSource = table;
+            
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -179,13 +173,15 @@ namespace Projet_cinema
 
             DBconnection conn = new DBconnection();
             DataGridViewRow selectesRow = dgvFilm.Rows[index];
-            DataGridViewRow newRows = dgvFilm.Rows[index];
+           // DataGridViewRow newRows = dgvFilm.Rows[index];
             
-            newRows.Cells[0].Value = cbNomFilmProj.Text;
+            /*newRows.Cells[0].Value = cbNomFilmProj.Text;
             newRows.Cells[1].Value = cbQualiteProj.Text;
             newRows.Cells[2].Value = dtpDateDebut.Value;
             newRows.Cells[3].Value = dtpDateFin.Value;
-            newRows.Cells[4].Value = cbSalleProj.Text;
+            newRows.Cells[4].Value = cbSalleProj.Text;*/
+
+            //Faire la modification dans la base de donnée
             conn.UpdateProj(selectesRow.Cells[0].Value.ToString(), cbNomFilmProj.Text, cbQualiteProj.Text, dtpDateDebut.Value, dtpDateFin.Value, cbSalleProj.Text);
             
 
@@ -206,14 +202,14 @@ namespace Projet_cinema
             table.Columns.Add("Date de fin ", typeof(string));
             table.Columns.Add("Salle ", typeof(string));
 
-
+            //Récuperer les nouvelles valeurs
             SQLiteDataReader reader = conn.GetProjections();
-
+            // Ajouter nouvelle valeur dans la liste
             while (reader.Read())
             {
                 Console.WriteLine("OK PROJECTIONS");
                 table.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString());
-                //name = reader["firstname" + " " + "lastname"].ToString();
+                
             }
 
             dgvFilm.DataSource = table;
